@@ -9,13 +9,13 @@ body {
 }
 
 .navbar-default {
-	background-color: #efefeb;
+	background-color: #efefeb !important;
 }
 
 .navbar-default .navbar-brand {
 	font-family: guardian-egyptt, georgia, serif;
 	font-weight: 400;
-	color: #d5641c;
+	color: #d5641c !important;
 	font-size: 30px;
 }
 
@@ -23,7 +23,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	color: #0192b5;
+	color: #0192b5 !important;
 }
 
 .center {
