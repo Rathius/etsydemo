@@ -50,3 +50,12 @@ body {
 		margin: 0px;
 	}
 }
+
+.jumbotron {
+	background-image: url('golden-header.jpg');
+	h1, h2 {
+		font-family: guardian-egyptt, georgia, serif;
+		color: #6e2a9e !important;
+		text-shadow: 0px 0px 7px #dbc1e6 !important;
+	}
+}
