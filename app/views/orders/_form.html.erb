@@ -21,7 +21,7 @@
 		    </div>
 		<% end %>
 		
-		<div id="stripe-error" class="alert alert-danger" style="display:none">
+		<div id="stripe_error" class="alert alert-danger" style="display:none">
 			<noscript>JavaScript is not enabled and is required for this form. First enable in in your web browser settings</noscript>
 		</div>
 		
@@ -61,7 +61,7 @@
 		  	</div>
 		  </div>
 		  <div class="form-group">
-		    <%= f.submit "Complete Order", class: "btn btn-success" %>
+		    <%= f.submit "Complete Order", class: "btn btn-success", data: { no_turbolinks: true} %>
 		  </div>
 		<% end %>
 	</div>

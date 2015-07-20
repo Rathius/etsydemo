@@ -26,12 +26,29 @@ class ListingsController < ApplicationController
   # GET /listings/1/edit
   def edit
   end
+  
+  
 
   # POST /listings
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
+    
+    if current_user.recipient.blank?
+	    Stripe.api_key = ENV["STRIPE_API_KEY"]
+	    token =  params[:stripeToken]
+	    
+	    recipient = Stripe::Account.create(
+			    :managed => false,
+				:country => 'US',
+				:email => current_user.email
+		    )
+		    
+		current_user.recipient = recipient.id
+		current_user.save
+	end
+	
 
     respond_to do |format|
       if @listing.save
