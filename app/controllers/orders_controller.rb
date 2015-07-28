@@ -38,6 +38,8 @@ class OrdersController < ApplicationController
 		    :source => token
 	    )
 	    
+	    puts token
+	    
 	    flash[:notice] = "Thanks for ordering!"
 	rescue Stripe::CardError => e
 		flash[:danger] = e.message
