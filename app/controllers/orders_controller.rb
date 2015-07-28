@@ -31,13 +31,12 @@ class OrdersController < ApplicationController
     Stripe.api_key = ENV["STRIPE_API_KEY"]
     token =  params[:stripeToken]
     
-    puts token
-    
     begin
 	    charge = Stripe::Charge.create(
 		    :amount => (@listing.price * 100).floor,
 		    :currency => "usd",
-		    :source => @seller.id
+		    puts token,
+		    :source => token
 	    )
 	    
 	    flash[:notice] = "Thanks for ordering!"
